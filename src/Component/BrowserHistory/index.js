@@ -93,6 +93,19 @@ class BrowserHistory extends Component {
     }
   }
 
+  onEnteringInput = event => {
+    const {HistoryList} = this.state
+    const filteredList = HistoryList.filter(eachHistoryValue =>
+      eachHistoryValue.title
+        .toLowerCase()
+        .includes(event.target.value.toLowerCase()),
+    )
+    this.setState({HistoryList: filteredList})
+    if (filteredList.length === 0) {
+      this.setState({isEmpty: true})
+    }
+  }
+
   render() {
     const {HistoryList, isEmpty} = this.state
 
@@ -115,6 +128,7 @@ class BrowserHistory extends Component {
               type="search"
               className="input-container"
               placeholder="Search history"
+              onChange={this.onEnteringInput}
             />
           </div>
         </div>

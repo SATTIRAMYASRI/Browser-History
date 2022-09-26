@@ -43,6 +43,7 @@
   padding: 8px;
   font-size: 20px;
   width: 40vw;
+  outline: none;
 }
 .card-container {
   background-color: white;
@@ -55,13 +56,15 @@
   padding: 20px;
 }
 .no-history {
+  text-align: center;
+  /* color: #475569; */
   font-family: 'Roboto';
   font-size: 30px;
   color: #64748b;
 }
 .no-history-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
